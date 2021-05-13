@@ -1,0 +1,51 @@
+
+body {
+background-color: Black;
+font-family: Brush Script MT, Brush Script Std, cursive;
+align-content: center;
+color: white;
+text-align: center;
+}
+hr{
+
+border-style: none;
+border-top-style: dotted;
+width: 30%;
+border-color: grey;
+border-width: 5px;
+}
+
+img
+{
+height: 50%;
+}
+
+h1
+{
+  color: #66BFBF;
+  font-family:Times, Times New Roman, serif;
+
+}
+
+h3
+{
+  color: #66BFBF;
+    font-family:Times, Times New Roman, serif;
+
+}
+.rating{
+  position: fixed;
+  top: auto;
+  right: 10px;
+  cursor: pointer;
+}
+a:-webkit-any-link {
+    color: White;
+  }
+
+.Contacts{
+  position: fixed;
+  top: 200px;
+  right: 10px;
+  cursor: pointer;
+}
