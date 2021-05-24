@@ -7,7 +7,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS']   = False
 
 @app.route("/")
 def main():
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route("/SignUp")
 def SignUp():
@@ -39,6 +39,31 @@ class user_info(db.Model):
         self.UserID=UserID
         self.Email=Email
         self.password=password
+@app.route("/login")
+def login():
+    return render_template('login.html')
+
+@app.route("/loginattempt",methods=["POST"])
+def loginattempt():
+    if request.method == "POST":
+        UserID=request.form['UserID']
+        password=request.form['password']
+        user=user_info.query.filter_by(UserID=UserID).first()
+
+        if (user.UserID==UserID) & (user.password==password):
+            db.session.close()
+            return render_template('index.html', message=f'{UserID} has logged in')
+
+        return  render_template('login.html', message='login unauthenticated')
+
+@app.route("/logout")
+def Signout():
+    db.session.close()
+    return render_template('login.html',message='Successfully logged out')
+
+
+
+
 
 
 if __name__=='__main__':

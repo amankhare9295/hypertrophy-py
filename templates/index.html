@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <table cellspacing="20">
     <tr>
-      <td><img  src="../images/pp.jpg"></td>
+    <td>  {% if message %}
+      <p class="message">{{message | safe}}</p>
+      {% endif %}
+      </td>
 
 
       <td>  <h1>Aman Khare</h1>
@@ -13,6 +16,13 @@
         </td>
     </tr>
   </table>
+
+  <form id="login" action='/logout'><button type="submit" class="submit-btn">logout</button>
+  </form>
+
+  <li class="nav-item">
+                      <a class="nav-link" href="login">login</a>
+                    </li>
 
 <link rel="stylesheet" href="../static/css/style.css">
 
